@@ -22,7 +22,13 @@ app.get('/', (req, res) => {
 const articleRoutes = require('./src/routes/article.routes')
 
 // using as middleware
-app.use('/api/article', articleRoutes)
+app.use('/article', articleRoutes)
+
+// Require magazine routes
+const magazineRoutes = require('./src/routes/magazine.routes')
+
+// using as middleware
+app.use('/magazine', magazineRoutes)
 
 // listen for requests
 app.listen(port, () => {
