@@ -30,6 +30,12 @@ const magazineRoutes = require('./src/routes/magazine.routes')
 // using as middleware
 app.use('/magazine', magazineRoutes)
 
+// Require reference_magazine routes
+const referenceMagazineRoutes = require('./src/routes/referenceMagazine.routes')
+
+// using as middleware
+app.use('/ref', referenceMagazineRoutes)
+
 // listen for requests
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);

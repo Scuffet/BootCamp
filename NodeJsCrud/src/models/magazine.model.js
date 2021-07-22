@@ -3,7 +3,7 @@ var dbConn = require('./../../config/db.config');
 
 //Magazine object create
 var Magazine = function(magazine){
-    this.nom_magazine         = magazine.nom_magazine;
+    this.id_magazine          = magazine.id_magazine;
     this.id_article           = magazine.id_article;
 };
 
@@ -43,7 +43,7 @@ Magazine.findAll = function (result) {
     });   
 };
 Magazine.update = function(id, magazine, result){
-    dbConn.query("UPDATE magazine SET nom_magazine=?, id_article=?  WHERE id = ?", [magazine.nom_magazine,magazine.id_article, id], function (err, res) {
+    dbConn.query("UPDATE magazine SET id_magazine=?, id_article=?  WHERE id = ?", [magazine.id_magazine,magazine.id_article, id], function (err, res) {
           if(err) {
               console.log("error: ", err);
               result(null, err);
